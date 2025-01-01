@@ -1,0 +1,42 @@
+{
+  "name": "get-full-year",
+  "version": "0.0.1",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "prepare": "tshy"
+  },
+  "keywords": [],
+  "author": "Sunil Pai <threepointone@gmail.com>",
+  "license": "ISC",
+  "description": "An unofficial client for getfullyear.com",
+  "devDependencies": {
+    "tshy": "^3.0.2",
+    "typescript": "^5.7.2"
+  },
+  "type": "module",
+  "tshy": {
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts"
+    }
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    }
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "module": "./dist/esm/index.js"
+}
