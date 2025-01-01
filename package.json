@@ -5,6 +5,10 @@
     "dist",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/threepointone/get-full-year.git"
+  },
   "scripts": {
     "prepare": "tshy",
     "test": "node --test --loader ts-node/esm tests/index.ts"

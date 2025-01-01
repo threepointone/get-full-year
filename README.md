@@ -94,7 +94,7 @@ get-full-year/
 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/get-full-year.git
+git clone https://github.com/threepointone/get-full-year.git
 ```
 
 2. Install dependencies
@@ -120,7 +120,7 @@ This project uses `tshy` for TypeScript builds, supporting both ESM and CommonJS
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/get-full-year/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/threepointone/get-full-year/issues).
 
 ## 📄 License
 
@@ -141,7 +141,7 @@ This project is licensed under the ISC License - see the [LICENSE](LICENSE) file
 
 ## 📊 Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/get-full-year?style=social)
+![GitHub stars](https://img.shields.io/github/stars/threepointone/get-full-year?style=social)
 ![npm downloads](https://img.shields.io/npm/dm/get-full-year)
 
 ---
