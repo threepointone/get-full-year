@@ -6,13 +6,16 @@
     "README.md"
   ],
   "scripts": {
-    "prepare": "tshy"
+    "prepare": "tshy",
+    "test": "node --test --loader ts-node/esm tests/index.ts"
   },
   "keywords": [],
   "author": "Sunil Pai <threepointone@gmail.com>",
   "license": "ISC",
   "description": "An unofficial client for getfullyear.com",
   "devDependencies": {
+    "@types/node": "^22.10.3",
+    "ts-node": "^10.9.2",
     "tshy": "^3.0.2",
     "typescript": "^5.7.2"
   },
