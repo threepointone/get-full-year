@@ -11,7 +11,8 @@
   },
   "scripts": {
     "prepare": "tshy",
-    "test": "node --test --loader ts-node/esm tests/index.ts"
+    "test": "node --test --loader ts-node/esm tests/index.ts",
+    "example": "node --loader ts-node/esm example/index.ts"
   },
   "keywords": [],
   "author": "Sunil Pai <threepointone@gmail.com>",
