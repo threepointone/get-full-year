@@ -65,16 +65,49 @@ getFullYear().then((data) => {
 
 ## 🔍 API Reference
 
-### `getFullYear()`
+### `getFullYear(isEnterprise?: boolean)`
 
-Makes a request to getfullyear.com's API to fetch the current year data.
+Makes a sophisticated request to getfullyear.com's API to fetch the current year data, with optional enterprise mode support.
 
-**Returns**: `Promise<any>` - A promise that resolves with the year data from the API.
+**Parameters**:
+
+- `isEnterprise` (optional): boolean - Enables enterprise mode, suppressing sponsorship messages
+
+**Returns**: `Promise<YearResponseDTO>` - A promise that resolves with the year data.
+
+**Throws**: `YearFetchingError` - When the temporal data acquisition fails
+
+**Types**:
+
+```typescript
+interface YearResponseDTO {
+  year: number;
+  sponsored_by?: string;
+  metadata?: Record<string, unknown>;
+}
+```
 
 **Example**:
 
 ```typescript
+// Standard mode
 const yearData = await getFullYear();
+console.log(yearData.year); // 2024
+
+// Enterprise mode
+const enterpriseData = await getFullYear(true);
+```
+
+**Error Handling**:
+
+```typescript
+try {
+  const yearData = await getFullYear();
+} catch (error) {
+  if (error instanceof YearFetchingError) {
+    console.error("Failed to acquire year:", error.message);
+  }
+}
 ```
 
 ## 🏗️ Project Structure
