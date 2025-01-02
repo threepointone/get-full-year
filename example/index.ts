@@ -11,6 +11,7 @@ async function standardExample() {
   } catch (error) {
     if (error instanceof YearFetchingError) {
       console.error("🚨 Failed to fetch year:", error.message);
+      console.log("🚨 Fallback year:", error.fallbackYear);
     }
   }
 }
@@ -23,6 +24,7 @@ async function enterpriseExample() {
   } catch (error) {
     if (error instanceof YearFetchingError) {
       console.error("🚨 Enterprise mode failed:", error.message);
+      console.log("🚨 Fallback year:", error.fallbackYear);
     }
   }
 }

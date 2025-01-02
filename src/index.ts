@@ -5,9 +5,18 @@ export interface YearResponseDTO {
 }
 
 export class YearFetchingError extends Error {
+  /** 
+   * ⚠️ This value comes from your device's clock, which could be set to 1985 
+   * for all we know. Not recommended for time travel calculations or determining 
+   * if you're eligible for senior citizen discounts.
+   * In case of mission-critical applications, please consult your local time wizard.
+   */
+  fallbackYear: number;
+
   constructor(message: string) {
     super(`🚨 Year Fetching Operation Failed: ${message}`);
     this.name = "YearFetchingError";
+    this.fallbackYear = new Date().getFullYear();
   }
 }
 
