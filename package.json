@@ -19,7 +19,7 @@
   "license": "ISC",
   "description": "An unofficial client for getfullyear.com",
   "devDependencies": {
-    "@types/node": "^22.10.3",
+    "@types/node": "^22.10.4",
     "ts-node": "^10.9.2",
     "tshy": "^3.0.2",
     "typescript": "^5.7.2"

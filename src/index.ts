@@ -20,7 +20,8 @@ export class YearFetchingError extends Error {
  * @throws {YearFetchingError} When the year cannot be gracefully acquired
  */
 export default async function getFullYear(
-  isEnterprise: boolean = false
+  isEnterprise: boolean = false,
+  exitOnFailure: boolean = true,
 ): Promise<YearResponseDTO> {
   console.log(
     `🚀 Initiating year acquisition process ${
@@ -51,6 +52,14 @@ export default async function getFullYear(
     console.log(`✅ Year acquisition completed successfully`);
     return data;
   } catch (error) {
+    if (exitOnFailure) {
+      if (typeof process !== "undefined") {
+        process.exit(1);
+      } else if (typeof window !== "undefined") {
+        window.close();
+      }
+    }
+
     console.error(
       `❌ Catastrophic failure in year acquisition process: ${
         error instanceof Error ? error.message : "Unknown error"
