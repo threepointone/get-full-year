@@ -40,6 +40,7 @@ test("getFullYear throws YearFetchingError on network error", async (t: TestCont
       (error: unknown) => {
         assert.ok(error instanceof YearFetchingError);
         assert.ok(error.message.includes("Network error"));
+        assert.equal(error.fallbackYear, new Date().getFullYear());
         return true;
       }
     );
@@ -62,6 +63,7 @@ test("getFullYear throws YearFetchingError on bad HTTP status", async (t: TestCo
       (error: unknown) => {
         assert.ok(error instanceof YearFetchingError);
         assert.ok(error.message.includes("HTTP Status: 500"));
+        assert.equal(error.fallbackYear, new Date().getFullYear());
         return true;
       }
     );
